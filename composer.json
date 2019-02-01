@@ -1,0 +1,30 @@
+{
+  "name": "websolve/leads-sdk-php",
+  "description": "Leads Management System SDK for PHP",
+  "prefer-stable": true,
+  "keywords": ["leads","websolve","sdk"],
+  "type": "library",
+  "license": "proprietary",
+  "require": {
+    "php": ">=7.0.21"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Websolve\\": "src/"
+    }
+  },
+  "config": {
+    "vendor-dir": "vendor",
+    "bin-dir": "vendor/bin",
+    "optimize-autoloader": true,
+    "discard-changes": true,
+    "sort-packages": true
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  }
+}
