@@ -1,0 +1,9 @@
+# Project files
+vendor
+
+# IntelliJ project files
+.idea
+
+# Composer
+composer.phar
+composer.lock
