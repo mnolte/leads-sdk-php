@@ -1,18 +1,18 @@
-#Methods
-- getLeadHeaders
-- setLead
-- getLead
-- getLeadBulk
+# Methods
+- [getLeadHeaders](#getleadheaders)
+- [setLead](#setlead)
+- [getLead](#getlead)
+- [getLeadBulk](#getleadbulk)
 
-##getLeadHeaders
+## getLeadHeaders
 The method getLeadHeaders is used to retrieve all fields that can be used while submitting a lead to the LSS.
 
-###Arguments
+### Arguments
 Argument | Type |  Description
 --- | --- | ---
 providerCode | string | To be supplied by LSS administrator, always linked to one IP address
 
-###Returns
+### Returns
 The method returns an XML with all fields available for submitting a lead in the following format:
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -42,16 +42,16 @@ The method returns an XML with all fields available for submitting a lead in the
 </headers>
 ```
 
-###Example usage
+### Example usage
 ```php
 $client = new \Websolve\Leads\Client();
 $result = $client->getLeadHeaders($providerCode);
 ```
 
-##setLead
+## setLead
 The method setLead can be used to submit a new lead to the LSS. All available fields can be retrieved by using the getLeadHeaders method. 
 
-###Arguments
+### Arguments
 Argument | Type |  Description
 --- | --- | ---
 providerCode | string | To be supplied by LSS administrator, always linked to one IP address
@@ -75,8 +75,8 @@ leadData | string | An XML file
 </lead>
 ```
 
-###Returns
-####Failure
+### Returns
+#### Failure
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <lead>
@@ -85,7 +85,7 @@ leadData | string | An XML file
     <error>refID already exists</error>
 </lead>
 ```
-####Success
+#### Success
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <lead>
@@ -95,22 +95,22 @@ leadData | string | An XML file
 </lead>
 ```
 
-###Example usage
+### Example usage
 ```php
 $client = new \Websolve\Leads\Client();
 $result = $client->setLead($providerCode, $leadData);
 ```
 
-##getLead
+## getLead
 The method getLead is used to get the status of the lead within LSS.
 
-###Arguments
+### Arguments
 Argument | Type |  Description
 --- | --- | ---
 providerCode | string | To be supplied by LSS administrator, always linked to one IP address
 refID | string | The refID used to submit the lead
 
-###Returns
+### Returns
 The method returns an XML that tells about the different statuses a lead has had.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -134,23 +134,23 @@ The method returns an XML that tells about the different statuses a lead has had
 </lead>
 ```
 
-###Example usage
+### Example usage
 ```php
 $client = new \Websolve\Leads\Client();
 $result = $client->getLead($providerCode, $refID);
 ```
 
-##getLeadBulk
+## getLeadBulk
 The method getLead is used to get the status of the lead within LSS.
 
-###Arguments
+### Arguments
 Argument | Type |  Description
 --- | --- | ---
 providerCode | string | To be supplied by LSS administrator, always linked to one IP address
 datetimeStart | string | The start date of the selection (accepts almost any format)
 datetimeEnd | string | The end date of the selection (accepts almost any format)
 
-###Returns
+### Returns
 The method returns an XML that tells about the different statuses the leads have had.
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -168,7 +168,7 @@ The method returns an XML that tells about the different statuses the leads have
 </leads>
 ```
 
-###Example usage
+### Example usage
 ```php
 $client = new \Websolve\Leads\Client();
 $result = $client->getLeadBulk($providerCode, $datetimeStart, $datetimeEnd);
