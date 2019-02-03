@@ -1,6 +1,9 @@
 # Project files
 vendor
-composer.lock
 
 # IntelliJ project files
 .idea
+
+# Composer
+composer.phar
+composer.lock
